@@ -129,12 +129,7 @@ export class NgbAccordion implements AfterContentChecked {
   /**
    * An array or comma separated strings of panel identifiers that should be opened
    */
-  @Input() 
-
-
-
-
-Ids: string | string[] = [];
+  @Input() Ids: string | string[] = [];
 
   /**
    *  Whether the other panels should be closed when a panel is opened
