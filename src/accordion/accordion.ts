@@ -96,7 +96,7 @@ export interface NgbPanelChangeEvent {
   host: {'role': 'tablist', '[attr.aria-multiselectable]': '!closeOtherPanels'},
   template: `
     <ng-template ngFor let-panel [ngForOf]="panels">
-      <div class="card">
+      <div class="card" [class.active]="isOpen(panel.id)">
         <div role="tab" id="{{panel.id}}-header"
           [class]="'card-header ' + (panel.type ? 'card-'+panel.type: type ? 'card-'+type : '')" [class.active]="isOpen(panel.id)">
           <a href (click)="!!toggle(panel.id)" [class.text-muted]="panel.disabled" [attr.tabindex]="(panel.disabled ? '-1' : null)"
@@ -129,7 +129,12 @@ export class NgbAccordion implements AfterContentChecked {
   /**
    * An array or comma separated strings of panel identifiers that should be opened
    */
-  @Input() activeIds: string | string[] = [];
+  @Input() 
+
+
+
+
+Ids: string | string[] = [];
 
   /**
    *  Whether the other panels should be closed when a panel is opened
